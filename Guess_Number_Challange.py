@@ -1,14 +1,19 @@
-# we import here random number 
+# we import here random number
 # and create a Game which name is guess number challange
 # so try it
+import random
 
+def getNumber():
+    try:
+        return int(input("Guess The Number (between 1 to 1000): "))
+    except:
+        return getNumber()
 
-import random 
 number = random.randint(1,1000)
 start = 0
 
 while True:
-    input_number = int(input("Guess The Number(between 1 to 1000):"))
+    input_number = getNumber()
     start += 1
     if input_number == number:
         print("Congragulation!! Your Guess is Correct!")
